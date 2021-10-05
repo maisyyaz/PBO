@@ -18,7 +18,7 @@ public class Main {
                     "2. Ubah Data Buku\n" +
                     "3. Hapus Data Buku\n" +
                     "4. Lihat Semua Buku\n" +
-                    "5. Lihat Satu Buku\n" +
+                    "5. Cari Buku\n" +
                     "6. Keluar\n");
             String menu = input("Pilih menu: ");
             switch (menu) {
@@ -45,6 +45,10 @@ public class Main {
                 case "2":
                     do {
                         String isbn = input("ISBN: ");
+                        if (cekISBN(isbn) == null) {
+                            print("Buku tidak ada");
+                            break;
+                        }
                         String judul = input("Judul: ");
                         String pengarang = input("Pengarang: ");
                         int tahun = inputInt("Tahun: ");
@@ -165,47 +169,46 @@ public class Main {
     }
 
     static void tambahBuku(String isbn, String judul, String pengarang, int tahun, double harga, float rating) {
-        for (Buku b : buku) {
-            if (b.getIsbn().equals(isbn)) {
-                error.add("buku sudah ada");
-                return;
-            }
+        Buku b = cekISBN(isbn);
+        if (b != null) {
+            error.add("buku sudah ada");
+            return;
         }
         buku.add(new Buku(isbn, judul, pengarang, tahun, harga, rating));
     }
 
-    static void ubahBuku(String isbn, String judul, String pengarang, int tahun, double harga, float rating) {
+    static Buku cekISBN(String isbn) {
         for (Buku b : buku) {
             if (b.getIsbn().equals(isbn)) {
-                if (!judul.equals("")) {
-                    b.setJudul(judul);
-                }
-                if (!pengarang.equals("")) {
-                    b.setPengarang(pengarang);
-                }
-                if (tahun != 0) {
-                    b.setTahun(tahun);
-                }
-                if (harga != 0) {
-                    b.setHarga(harga);
-                }
-                if (rating != 0) {
-                    b.setRating(rating);
-                }
-                return;
+                return b;
             }
         }
         error.add("tidak ada buku");
+        return null;
+    }
+
+    static void ubahBuku(String isbn, String judul, String pengarang, int tahun, double harga, float rating) {
+        Buku b = cekISBN(isbn);
+        if (!judul.equals("")) {
+            b.setJudul(judul);
+        }
+        if (!pengarang.equals("")) {
+            b.setPengarang(pengarang);
+        }
+        if (tahun != 0) {
+            b.setTahun(tahun);
+        }
+        if (harga != 0) {
+            b.setHarga(harga);
+        }
+        if (rating != 0) {
+            b.setRating(rating);
+        }
     }
 
     static void hapusData(String isbn) {
-        for (Buku b : buku) {
-            if (b.getIsbn().equals(isbn)) {
-                buku.remove(b);
-                return;
-            }
-        }
-        error.add("tidak ada buku");
+        Buku b = cekISBN(isbn);
+        buku.remove(b);
     }
 
     static void cetakSemuaData() {
@@ -221,17 +224,16 @@ public class Main {
     }
 
     static void cetakData(String isbn) {
-        for (Buku b : buku) {
-            if (b.getIsbn().equals(isbn)) {
-                System.out.println("ISBN: " + b.getIsbn());
-                System.out.println("Judul Buku: " + b.getJudul());
-                System.out.println("Pengarang Buku: " + b.getPengarang());
-                System.out.println("Tahun Terbit: " + b.getTahun());
-                System.out.println("Harga Buku: " + b.getHarga());
-                System.out.println("Rating Buku: " + b.getRating());
-                return;
-            }
-        }
-        error.add("tidak ada buku");
+        Buku b = cekISBN(isbn);
+        System.out.println("ISBN: " + b.getIsbn());
+        System.out.println("Judul Buku: " + b.getJudul());
+        System.out.println("Pengarang Buku: " + b.getPengarang());
+        System.out.println("Tahun Terbit: " + b.getTahun());
+        System.out.println("Harga Buku: " + b.getHarga());
+        System.out.println("Rating Buku: " + b.getRating());
+    }
+    
+    static void print(String text) {
+        System.out.println(text);
     }
 }
