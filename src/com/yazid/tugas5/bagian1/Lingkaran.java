@@ -17,6 +17,6 @@ public class Lingkaran {
     }
 
     public double getKeliling() {
-        return PI * (2 * jariJari);
+        return PI * 2 * jariJari;
     }
 }
