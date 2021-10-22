@@ -1,25 +1,23 @@
 package com.yazid.tugas5.bagian1;
 
 public class Lingkaran {
-    private final float PI = 3.14f;
-    private final float jariJari;
-    private final double diameter;
+    private final static float PI = 3.14f;
 
-    public Lingkaran(float jariJari) {
-        this.jariJari = jariJari;
-        this.diameter = 2 * jariJari;
+    public static double getLuas(float jariJari) {
+        return PI * Math.pow(jariJari, 2);
     }
 
-    public Lingkaran(double diameter) {
-        this.diameter = diameter;
-        this.jariJari = (float) (diameter / 2);
+    public static double getLuas(double diameter) {
+        float jariJari = (float) (diameter / 2);
+        return PI * Math.pow(jariJari, 2);
     }
 
-    public double getLuas() {
-        return PI * Math.pow(this.jariJari, 2);
+    public static double getKeliling(float jariJari) {
+        double diameter = jariJari * 2;
+        return PI * diameter;
     }
 
-    public double getKeliling() {
-        return PI * this.diameter;
+    public static double getKeliling(double diameter) {
+        return PI * diameter;
     }
 }
