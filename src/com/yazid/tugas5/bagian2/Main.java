@@ -7,6 +7,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         double alas, tinggi, sisi;
         String pilih;
+        Segitiga segitiga;
 
         System.out.println("======================================");
         System.out.println("Aplikasi Luas dan Keliling Segitiga");
@@ -25,16 +26,18 @@ public class Main {
                     alas = in.nextDouble();
                     System.out.print("Masukkan tinggi: ");
                     tinggi = in.nextDouble();
-                    System.out.println("Luas segitiga adalah: " + Segitiga.luasTinggi(alas, tinggi));
-                    System.out.println("Keliling segitiga adalah: " + Segitiga.kelilingTinggi(alas, tinggi));
+                    segitiga = new Segitiga(alas, tinggi);
+                    System.out.println("Luas segitiga adalah: " + segitiga.getLuas());
+                    System.out.println("Keliling segitiga adalah: " + segitiga.getKeliling());
                     break;
                 case "2":
                     System.out.print("Masukkan alas: ");
                     alas = in.nextDouble();
                     System.out.print("Masukkan sisi: ");
-                    sisi = in.nextDouble();
-                    System.out.println("Luas segitiga adalah: " + Segitiga.luasSisi(alas, sisi));
-                    System.out.println("Keliling segitiga adalah: " + Segitiga.kelilingSisi(alas, sisi));
+                    sisi = in.nextFloat();
+                    segitiga = new Segitiga(alas, (float) sisi);
+                    System.out.println("Luas segitiga adalah: " + segitiga.getLuas());
+                    System.out.println("Keliling segitiga adalah: " + segitiga.getKeliling());
                     break;
                 case "3":
                     System.exit(0);

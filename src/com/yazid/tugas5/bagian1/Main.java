@@ -2,15 +2,18 @@ package com.yazid.tugas5.bagian1;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Luas Lingkaran dari jari-jari lingkaran 7 adalah: " + Lingkaran.luasjariJari(7f));
-        System.out.println("Keliling Lingkaran dari jari-jari lingkaran 7 adalah: " + Lingkaran.kelilingJariJari(7f));
+        Lingkaran lingkaran1 = new Lingkaran(7f);
+        System.out.println("Luas Lingkaran dari jari-jari lingkaran 7 adalah: " + lingkaran1.getLuas());
+        System.out.println("Keliling Lingkaran dari jari-jari lingkaran 7 adalah: " + lingkaran1.getKeliling());
         System.out.println();
 
-        System.out.println("Luas Lingkaran dari jari-jari lingkaran 5.5 adalah: " + Lingkaran.luasjariJari(5.5f));
-        System.out.println("Keliling Lingkaran dari jari-jari lingkaran 5.5 adalah: " + Lingkaran.kelilingJariJari(5.5f));
+        Lingkaran lingkaran2 = new Lingkaran(5.5f);
+        System.out.println("Luas Lingkaran dari jari-jari lingkaran 5.5 adalah: " + lingkaran2.getLuas());
+        System.out.println("Keliling Lingkaran dari jari-jari lingkaran 5.5 adalah: " + lingkaran2.getKeliling());
         System.out.println();
 
-        System.out.println("Luas Lingkaran dari diameter lingkaran 20.4 adalah: " + Lingkaran.luasDiameter(20.4));
-        System.out.println("Keliling Lingkaran dari diameter lingkaran 20.4 adalah: " + Lingkaran.kelilingDiameter(20.4));
+        Lingkaran lingkaran3 = new Lingkaran(20.4);
+        System.out.println("Luas Lingkaran dari diameter lingkaran 20.4 adalah: " + lingkaran3.getLuas());
+        System.out.println("Keliling Lingkaran dari diameter lingkaran 20.4 adalah: " + lingkaran3.getKeliling());
     }
 }
