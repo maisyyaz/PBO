@@ -8,8 +8,8 @@ public class Lingkaran {
         this.jariJari = jariJari;
     }
 
-    public Lingkaran(double diamteter) {
-        this.jariJari = (float) (diamteter / 2);
+    public Lingkaran(double diameter) {
+        this.jariJari = (float) (diameter / 2);
     }
 
     public double getLuas() {
