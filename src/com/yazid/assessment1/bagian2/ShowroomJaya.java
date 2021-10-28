@@ -77,7 +77,7 @@ public class ShowroomJaya {
             return;
         }
         if (tempMobil.getTahunKeluaran().equals(tahun)) {
-            if (tempMobil.getStok() > jumlah) {
+            if (tempMobil.getStok() >= jumlah) {
                 if (jumlah == 2) {
                     diskon = 10.0;
                 } else if (jumlah > 2) {
