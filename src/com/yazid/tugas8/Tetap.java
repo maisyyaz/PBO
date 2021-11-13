@@ -1,4 +1,4 @@
-package com.yazid.tugas9;
+package com.yazid.tugas8;
 
 public class Tetap extends Karyawan {
     private final double tuDas;

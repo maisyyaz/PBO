@@ -1,4 +1,4 @@
-package com.yazid.tugas9;
+package com.yazid.tugas8;
 
 public class Karyawan {
     protected String nama;
