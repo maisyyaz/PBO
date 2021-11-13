@@ -5,6 +5,7 @@ public class Tetap extends Karyawan {
 
     public Tetap(String nama, double gaDas, double tuDas) {
         super(nama, gaDas);
+        super.type = "Tetap";
         this.tuDas = tuDas;
     }
 

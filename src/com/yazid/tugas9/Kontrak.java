@@ -5,6 +5,7 @@ public class Kontrak extends Karyawan {
 
     public Kontrak(String nama, double gaDas, int waktu) {
         super(nama, gaDas);
+        super.type = "Kontrak";
         this.waktu = waktu;
     }
 

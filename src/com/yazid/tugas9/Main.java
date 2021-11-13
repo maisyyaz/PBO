@@ -7,7 +7,14 @@ public class Main {
         departemen.addKaryawan(new Karyawan("Yazid", 10));
         departemen.addKaryawan(new Tetap("Arief", 10, 5));
         departemen.addKaryawan(new Kontrak("Chandra", 9, 8));
+        departemen.addKaryawan(new Tetap("Chandra", 9, 8));
+        departemen.addKaryawan(new Kontrak("Chandra", 9, 8));
+        departemen.addKaryawan(new Kontrak("Chandra", 9, 8));
+        departemen.addKaryawan(new Tetap("Chandra", 9, 8));
+        departemen.addKaryawan(new Kontrak("Chandra", 9, 8));
 
         departemen.displayAll();
+        departemen.displayKontrak();
+        departemen.displayTetap();
     }
 }
