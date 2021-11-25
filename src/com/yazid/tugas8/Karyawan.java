@@ -1,6 +1,6 @@
 package com.yazid.tugas8;
 
-public class Karyawan {
+public abstract class Karyawan {
     protected String nama;
     protected double gaDas;
     protected String type;
