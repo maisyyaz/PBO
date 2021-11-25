@@ -32,7 +32,7 @@ public class Customer extends Member {
         super.info();
     }
 
-    public void infoDriver(Driver driver) {
+    public static void infoDriver(Driver driver) {
         System.out.println("NIK\t: " + driver.nik);
         System.out.println("Nama\t: " + driver.nama);
         System.out.println("No Telp\t: " + driver.noTelp);

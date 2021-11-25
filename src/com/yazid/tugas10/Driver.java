@@ -27,7 +27,7 @@ public class Driver extends Member {
         System.out.println("Plat Nomor Kendaraan\t: " + this.platNomor);
     }
 
-    public void infoCustomer(Customer customer) {
+    public static void infoCustomer(Customer customer) {
         System.out.println("NIK\t: " + customer.nik);
         System.out.println("Nama\t: " + customer.nama);
         System.out.println("No Telp\t: " + customer.noTelp);
