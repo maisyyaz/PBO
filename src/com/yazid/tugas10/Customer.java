@@ -1,7 +1,5 @@
 package com.yazid.tugas10;
 
-import com.yazid.assessment1.bagian1.Transaksi;
-
 public class Customer extends Member {
     private double ongkos;
     private Driver driver;

@@ -2,7 +2,7 @@ package com.yazid.tugas10;
 
 import java.util.ArrayList;
 
-public class Member {
+public abstract class Member {
     protected String nik, nama, noTelp;
     protected double saldo;
     protected static ArrayList<Driver> dataDriver = new ArrayList<>();
