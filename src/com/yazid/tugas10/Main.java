@@ -137,7 +137,7 @@ public class Main {
                             System.out.print("Saldo : ");
                             ongkos = in.nextDouble();
                             if (customer.diantar(driver, ongkos)) {
-                                customer.buktiTransaksi(driver);
+                                customer.buktiTransaksi();
                             } else {
                                 System.out.println("Pengantaran gagal");
                             }

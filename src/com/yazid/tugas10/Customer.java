@@ -4,6 +4,8 @@ import com.yazid.assessment1.bagian1.Transaksi;
 
 public class Customer extends Member {
     private double ongkos;
+    private Driver driver;
+
     public Customer(String nik, String nama, String noTelp) {
         super(nik, nama, noTelp, 0);
         addCustomer(this);
@@ -14,14 +16,15 @@ public class Customer extends Member {
             super.saldo -= ongkos;
             driver.saldo += ongkos;
             this.ongkos = ongkos;
+            this.driver = driver;
             return true;
         }
         return false;
     }
 
-    public void buktiTransaksi(Driver driver) {
+    public void buktiTransaksi() {
         System.out.println("Nama\t: " + super.nama);
-        System.out.println("Driver\t: " + driver.nama);
+        System.out.println("Driver\t: " + this.driver.nama);
         System.out.println("Ongkos\t: " + this.ongkos);
         System.out.println("Status\t: Lunas");
         System.out.println("Saldo\t: " + super.saldo);
