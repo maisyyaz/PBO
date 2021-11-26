@@ -134,7 +134,7 @@ public class Main {
                         nama = in.next();
                         driver = Driver.select(nama);
                         if (driver != null) {
-                            System.out.print("Saldo : ");
+                            System.out.print("Ongkos : ");
                             ongkos = in.nextDouble();
                             if (customer.diantar(driver, ongkos)) {
                                 customer.buktiTransaksi();
