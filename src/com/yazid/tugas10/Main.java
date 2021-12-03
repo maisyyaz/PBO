@@ -4,10 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String nik, nama, noTelp, menu, subMenu, jenis;
-        double saldo, ongkos;
-        Driver driver;
-        Customer customer;
+        String menu, subMenu;
         Scanner in = new Scanner(System.in);
 
         while (true) {
@@ -29,38 +26,18 @@ public class Main {
                                 "3. Kembali");
                         System.out.print("Pilih: ");
                         subMenu = in.next();
-                        switch (subMenu){
+                        switch (subMenu) {
                             case "1":
-                                System.out.println("Tambah Driver");
-                                System.out.print("NIK\t: ");
-                                nik = in.next();
-                                System.out.print("Nama\t: ");
-                                nama = in.next();
-                                System.out.print("No.Telp\t: ");
-                                noTelp = in.next();
-                                System.out.print("Saldo\t: ");
-                                saldo = in.nextDouble();
-                                System.out.print("Plat No.\t: ");
-                                String platNomor = in.next();
-                                System.out.print("Jenis Kendaraan\t: ");
-                                jenis = in.next();
-                                new Driver(nik, nama, noTelp, saldo, platNomor, jenis);
+                                Driver.add();
                                 break;
                             case "2":
-                                System.out.println("Tambah Customer");
-                                System.out.print("NIK\t: ");
-                                nik = in.next();
-                                System.out.print("Nama\t: ");
-                                nama = in.next();
-                                System.out.print("No.Telp\t: ");
-                                noTelp = in.next();
-                                new Customer(nik, nama, noTelp);
+                                Customer.add();
                                 break;
                             default:
                                 System.out.println("Pilihan tidak ada");
                                 break;
                         }
-                    } while(!subMenu.equals("3"));
+                    } while (!subMenu.equals("3"));
                     break;
                 case "2":
                     System.out.println("Info Driver/Customer");
@@ -71,82 +48,24 @@ public class Main {
                                 "3. Kembali");
                         System.out.print("Pilih: ");
                         subMenu = in.next();
-                        switch (subMenu){
+                        switch (subMenu) {
                             case "1":
-                                System.out.println("Info Driver");
-                                System.out.print("Nama Driver: ");
-                                nama = in.next();
-                                driver = Driver.select(nama);
-                                if (driver != null) {
-                                    driver.info();
-                                } else {
-                                    System.out.println("tidak ada Driver");
-                                }
+                                Driver.getInfo();
                                 break;
                             case "2":
-                                System.out.println("Info Customer");
-                                System.out.print("Nama Customer: ");
-                                nama = in.next();
-                                customer = Customer.select(nama);
-                                if (customer != null) {
-                                    customer.info();
-                                } else {
-                                    System.out.println("tidak ada Customer");
-                                }
+                                Customer.getInfo();
                                 break;
                             default:
                                 System.out.println("Pilihan tidak ada");
                                 break;
                         }
-                    } while(!subMenu.equals("3"));
+                    } while (!subMenu.equals("3"));
                     break;
                 case "3":
-                    System.out.println("Topup saldo");
-                    System.out.print("Nama Driver: ");
-                    nama = in.next();
-                    driver = Driver.select(nama);
-                    if (driver != null) {
-                        System.out.print("Nama Customer: ");
-                        nama = in.next();
-                        customer = Customer.select(nama);
-                        if (customer != null) {
-                            System.out.print("Saldo : ");
-                            saldo = in.nextDouble();
-                            if (driver.topUp(customer, saldo)) {
-                                System.out.println("Topup saldo berhasil");
-                            } else {
-                                System.out.println("Topup saldo gagal");
-                            }
-                        } else {
-                            System.out.println("tidak ada customer");
-                        }
-                    } else {
-                        System.out.println("tidak ada Driver");
-                    }
+                    Driver.topUpCustomer();
                     break;
                 case "4":
-                    System.out.println("Transaksi Pengantaran");
-                    System.out.print("Nama Customer: ");
-                    nama = in.next();
-                    customer = Customer.select(nama);
-                    if (customer != null) {
-                        System.out.print("Nama Driver: ");
-                        nama = in.next();
-                        driver = Driver.select(nama);
-                        if (driver != null) {
-                            System.out.print("Ongkos : ");
-                            ongkos = in.nextDouble();
-                            if (customer.diantar(driver, ongkos)) {
-                                customer.buktiTransaksi();
-                            } else {
-                                System.out.println("Pengantaran gagal");
-                            }
-                        } else {
-                            System.out.println("tidak ada customer");
-                        }
-                    } else {
-                        System.out.println("tidak ada Driver");
-                    }
+                    Customer.diantarDriver();
                     break;
                 case "5":
                     System.exit(0);

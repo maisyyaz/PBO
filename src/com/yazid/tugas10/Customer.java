@@ -1,15 +1,18 @@
 package com.yazid.tugas10;
 
+import java.util.Scanner;
+
 public class Customer extends Member {
+    static Scanner in = new Scanner(System.in);
     private double ongkos;
     private Driver driver;
 
-    public Customer(String nik, String nama, String noTelp) {
-        super(nik, nama, noTelp, 0);
-        addCustomer(this);
+    public Customer(String nik, String nama, String noTelp, double saldo) {
+        super(nik, nama, noTelp, saldo);
+        Member.dataCustomer.add(this);
     }
 
-    public boolean diantar(Driver driver, double ongkos) {
+    private boolean diantar(Driver driver, double ongkos) {
         if (super.saldo >= saldo) {
             super.saldo -= ongkos;
             driver.saldo += ongkos;
@@ -47,5 +50,55 @@ public class Customer extends Member {
             }
         }
         return null;
+    }
+
+    public static void add() {
+        System.out.println("Tambah Driver");
+        System.out.print("NIK\t: ");
+        String nik = in.next();
+        System.out.print("Nama\t: ");
+        String nama = in.next();
+        System.out.print("No.Telp\t: ");
+        String noTelp = in.next();
+        System.out.print("Saldo\t: ");
+        double saldo = in.nextDouble();
+        new Customer(nik, nama, noTelp, saldo);
+    }
+
+    public static void getInfo() {
+        System.out.println("Info Customer");
+        System.out.print("Nama Customer: ");
+        String nama = in.next();
+        Customer customer = Customer.select(nama);
+        if (customer != null) {
+            customer.info();
+        } else {
+            System.out.println("tidak ada Customer");
+        }
+    }
+
+    public static void diantarDriver() {
+        System.out.println("Transaksi Pengantaran");
+        System.out.print("Nama Customer: ");
+        String nama = in.next();
+        Customer customer = Customer.select(nama);
+        if (customer != null) {
+            System.out.print("Nama Driver: ");
+            nama = in.next();
+            Driver driver = Driver.select(nama);
+            if (driver != null) {
+                System.out.print("Ongkos : ");
+                double ongkos = in.nextDouble();
+                if (customer.diantar(driver, ongkos)) {
+                    customer.buktiTransaksi();
+                } else {
+                    System.out.println("Pengantaran gagal");
+                }
+            } else {
+                System.out.println("tidak ada customer");
+            }
+        } else {
+            System.out.println("tidak ada Driver");
+        }
     }
 }

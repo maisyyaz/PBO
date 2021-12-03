@@ -21,12 +21,4 @@ public abstract class Member {
         System.out.println("No Telp\t: " + this.noTelp);
         System.out.println("Saldo\t: " + this.saldo);
     }
-
-    protected void addDriver(Driver driver) {
-        dataDriver.add(driver);
-    }
-
-    protected void addCustomer(Customer customer) {
-        dataCustomer.add(customer);
-    }
 }
