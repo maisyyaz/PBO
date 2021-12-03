@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String menu, subMenu;
-        String username = "admin", password = "admin", usernameIn, passwordIn;
+        String menu, subMenu, username = "admin", password = "admin", usernameIn, passwordIn, nama = "Admin";
         Scanner in = new Scanner(System.in);
 
         do {
@@ -19,9 +18,9 @@ public class Main {
         } while (!username.equals(usernameIn) && !password.equals(passwordIn));
 
         while(true) {
-            System.out.println("=======================");
-            System.out.println("Aplikasi Keanggotaan");
-            System.out.println("=======================");
+            System.out.println("=====================================");
+            System.out.println("Selamat Datang " + nama + " di Aplikasi Keanggotaan");
+            System.out.println("=====================================");
             System.out.println("Menu\n" +
                     "1. Aslab\n" +
                     "2. Anggota\n" +
