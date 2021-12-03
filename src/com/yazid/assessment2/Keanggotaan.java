@@ -49,23 +49,23 @@ public abstract class Keanggotaan {
         return divisi;
     }
 
-    public void setNama(String nama) {
+    protected void setNama(String nama) {
         this.nama = nama;
     }
 
-    public void setNoTelp(String noTelp) {
+    protected void setNoTelp(String noTelp) {
         this.noTelp = noTelp;
     }
 
-    public void setKelas(String kelas) {
+    protected void setKelas(String kelas) {
         this.kelas = kelas;
     }
 
-    public void setAngkatan(String angkatan) {
+    protected void setAngkatan(String angkatan) {
         this.angkatan = angkatan;
     }
 
-    public void setDivisi(String divisi) {
+    protected void setDivisi(String divisi) {
         this.divisi = divisi;
     }
 }
