@@ -18,10 +18,10 @@ public class Main {
         } while (!username.equals(usernameIn) && !password.equals(passwordIn));
 
         while(true) {
-            System.out.println("=====================================");
+            System.out.println("==================================================");
             System.out.println("Selamat Datang " + nama + " di Aplikasi Keanggotaan");
-            System.out.println("=====================================");
-            System.out.println("Menu\n" +
+            System.out.println("==================================================");
+            System.out.println("Pilih Menu\n" +
                     "1. Aslab\n" +
                     "2. Anggota\n" +
                     "3. Keluar");
@@ -33,7 +33,7 @@ public class Main {
                     System.out.println("Aslab");
                     System.out.println("==================");
                     do {
-                        System.out.println("Menu:\n" +
+                        System.out.println("Pilih Menu:\n" +
                                 "1. Tambah\n" +
                                 "2. Lihat\n" +
                                 "3. Ubah\n" +
@@ -64,7 +64,7 @@ public class Main {
                     System.out.println("Anggota");
                     System.out.println("==================");
                     do {
-                        System.out.println("Menu:\n" +
+                        System.out.println("Pilih Menu:\n" +
                                 "1. Tambah\n" +
                                 "2. Lihat\n" +
                                 "3. Ubah\n" +
