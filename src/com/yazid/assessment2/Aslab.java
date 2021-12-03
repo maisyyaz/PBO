@@ -86,6 +86,7 @@ public class Aslab extends Keanggotaan {
             aslab.setNama(nama);
             aslab.setAngkatan(angkatan);
             aslab.setKelas(kelas);
+            aslab.setDivisi(divisi);
             aslab.setNoTelp(noTelp);
             aslab.setJabatan(jabatan);
         } else {

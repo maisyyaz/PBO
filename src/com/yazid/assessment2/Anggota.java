@@ -75,11 +75,10 @@ public class Anggota extends Keanggotaan {
             divisi = in.next();
             System.out.print("No Telp\t: ");
             noTelp = in.next();
-            System.out.print("Jabatan\t: ");
-            jabatan = in.next();
             anggota.setNama(nama);
             anggota.setAngkatan(angkatan);
             anggota.setKelas(kelas);
+            anggota.setDivisi(divisi);
             anggota.setNoTelp(noTelp);
         } else {
             System.out.println("Data anggota tidak ada");
